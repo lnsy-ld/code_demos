@@ -50,8 +50,8 @@ class Smtp
 
     function sendmail($to, $subject = "", $body = "", $fromEmail, $mailtype = 'HTML', $cc = "", $bcc = "", $additional_headers = "")
     {
-        $from = $fromEmail? : $this->smtpusermail;
-        
+        $from = $fromEmail ?: $this->smtpusermail;
+
         $mail_from = $this->get_address($this->strip_comment($from));
 
         $body = ereg_replace("(^|(\r\n))(\.)", "\1.\3", $body);
